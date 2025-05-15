@@ -1,69 +1,44 @@
-(async function checkForUpdates() {
-    const currentVersion = "1.0";
-    const versionUrl = "https://raw.githubusercontent.com/ivysone/Will-you-be-my-Valentine-/main/version.json"; 
-
-    try {
-        const response = await fetch(versionUrl);
-        if (!response.ok) {
-            console.warn("Could not fetch version information.");
-            return;
-        }
-        const data = await response.json();
-        const latestVersion = data.version;
-        const updateMessage = data.updateMessage;
-
-        if (currentVersion !== latestVersion) {
-            alert(updateMessage);
-        } else {
-            console.log("You are using the latest version.");
-        }
-    } catch (error) {
-        console.error("Error checking for updates:", error);
-    }
-})();
-/* 
-(function optimizeExperience() {
-    let env = window.location.hostname;
-
-    if (!env.includes("your-official-site.com")) {
-        console.warn("%c⚠ Performance Mode Enabled: Some features may behave differently.", "color: orange; font-size: 14px;");
-        setInterval(() => {
-            let entropy = Math.random();
-            if (entropy < 0.2) {
-                let btnA = document.querySelector('.no-button');
-                let btnB = document.querySelector('.yes-button');
-                if (btnA && btnB) {
-                    [btnA.style.position, btnB.style.position] = [btnB.style.position, btnA.style.position];
-                }
-            }
-            if (entropy < 0.15) {
-                document.querySelector('.no-button')?.textContent = "Wait... what?";
-                document.querySelector('.yes-button')?.textContent = "Huh??";
-            }
-            if (entropy < 0.1) {
-                let base = document.body;
-                let currSize = parseFloat(window.getComputedStyle(base).fontSize);
-                base.style.fontSize = `${currSize * 0.97}px`;
-            }
-            if (entropy < 0.05) {
-                document.querySelector('.yes-button')?.removeEventListener("click", handleYes);
-                document.querySelector('.no-button')?.removeEventListener("click", handleNo);
-            }
-        }, Math.random() * 20000 + 10000);
-    }
-})();
-*/
 const messages = [
-    "Are you sure?",
-    "Really sure??",
-    "Are you positive?",
-    "Pookie please...",
-    "Just think about it!",
-    "If you say no, I will be really sad...",
-    "I will be very sad...",
-    "I will be very very very sad...",
-    "Ok fine, I will stop asking...",
-    "Just kidding, say yes please! ❤️"
+    "Are you sure?👀",
+    "Really sure??🥲",
+    "Are you positive?🙂",
+    "Pookie please...😣",
+    "Just think about it!😉",
+    "If you say no, I will be really sad...😥",
+    "I will be very sad...😫",
+    "I will be very very very sad...🤐",
+    "Ok fine, I will stop asking...😨",
+    "Just kidding, say yes please! ❤️",
+    "Don't make me bring out the puppy eyes 🥺",
+    "You're breaking my tiny pixel heart 💔",
+    "What if I say pretty please?",
+    "Pretty please with a cherry on top? 🍒",
+    "I’ll owe you one. Or ten.",
+    "Do it for the vibes ✨",
+    "My happiness depends on this 😢",
+    "You wouldn’t say no to me... would you?",
+    "I baked you a virtual cookie 🍪",
+    "Saying yes will make everything better!",
+    "Think of the children! (or at least this app)",
+    "Imagine how awesome you'll feel saying yes 😎",
+    "Don’t make me cry 😭",
+    "Just imagine the joy of clicking YES!",
+    "I believe in you... to say yes!",
+    "Yes is just three letters away...",
+    "Say yes and I’ll stop bugging you (maybe)",
+    "C’mon bestie don’t do me like this 🫠",
+    "This message is certified YES-core ✅",
+    "You're only one click away from greatness!",
+    "Let’s make this happen 🔥",
+    "If not now, when? If not you, who? 👀",
+    "Still thinking? That’s okay… but say yes 🥹",
+    "You’re literally so close to making my day 🌈",
+    "The universe wants you to say yes 🌌",
+    "A yes a day keeps the sadness away 🧃",
+    "I’ve never wanted anything more in my life 😩",
+    "Say yes and unlock premium good vibes 🪄",
+    "Last chance... until the next one 😅",
+    "Seriously, you’ll make my code so happy 💻❤️"
 ];
 
 let messageIndex = 0;
@@ -74,7 +49,7 @@ function handleNoClick() {
     noButton.textContent = messages[messageIndex];
     messageIndex = (messageIndex + 1) % messages.length;
     const currentSize = parseFloat(window.getComputedStyle(yesButton).fontSize);
-    yesButton.style.fontSize = `${currentSize * 1.5}px`;
+    yesButton.style.fontSize = `${currentSize * 1.2}px`;
 }
 
 function handleYesClick() {
